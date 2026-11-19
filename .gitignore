@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.cf-os/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+deployment.local.jsonc
+*.pem

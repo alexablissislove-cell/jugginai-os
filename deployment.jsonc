@@ -1,0 +1,66 @@
+{
+  // Cloudflare account that owns every Worker and provisioned resource.
+  "accountId": "2cc3a4ec0dbc3969ca8c25a0c20a2465",
+
+  // Derived from workers.router.route.customDomain.
+  "publicBaseUrl": null,
+
+  // Worker names are permanent service identities. Keep them unique within the account.
+  "workers": {
+    "router": {
+      "name": "jugginai-os-router",
+      "route": { "customDomain": "os.jugginai.net" }
+    },
+    "workshop": { "name": "jugginai-os-workshop" },
+    "context": { "name": "jugginai-os-context" },
+    "scheduler": { "name": "jugginai-os-scheduler" },
+    "websearch": { "name": "jugginai-os-websearch" },
+    "customGatekeeper": { "name": "jugginai-os-custom-gk" },
+    "errorReporter": { "name": "jugginai-os-error-reporter" }
+  },
+
+  "gatekeepers": {},
+
+  "access": {
+    "issuer": "https://damp-bread-72db.cloudflareaccess.com",
+    "audience": "154189d9f45a6f79ad85f566af5cf91b4ac95e1c2a6b6a214094041d9ad01a77",
+    "admins": ["billcooperneverdies@gmail.com"]
+  },
+
+  "aiGateway": {
+    "enabled": true,
+    "name": "jugginai",
+    "accountId": null,
+    "providers": ["cloudflare"]
+  },
+
+  "context": {
+    "sharingDomain": null,
+    "kvNamespaceId": null
+  },
+
+  "customGatekeeper": {
+    "enabled": true,
+    "name": "JugginAI",
+    "message": "JugginAI Cloudflare OS instance."
+  },
+
+  "errorReporting": {
+    "enabled": true,
+    "environment": "production",
+    "release": null
+  },
+
+  "resources": {
+    "blueprintsKvNamespaceId": null,
+    "avatarsKvNamespaceId": null,
+    "blueprintContentBucket": null
+  },
+
+  "observability": {
+    "enabled": true,
+    "headSamplingRate": 1,
+    "logs": { "invocationLogs": false },
+    "traces": { "enabled": false, "headSamplingRate": 0.1 }
+  }
+}
